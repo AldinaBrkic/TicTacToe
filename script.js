@@ -28,18 +28,4 @@ function elementt(allElements)
 	}
 }
 
-function restart(allElements)
-{
-	var bigElement = document.getElementById(allElements);
-	var allEl = document.getElementById(allElements);
-	if ( bigElement.style.backgroundColor == "red" && allEl.style.backgroundColor == "blue")
-	{
-		counter++;
-		if (counter == 1)
-		{
-			bigElement.style.backgroundColor = "";
-			allEl.style.backgroundColor = "";
-			counter = 0;
-		}
-	}
-}
+
