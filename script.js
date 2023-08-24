@@ -8,10 +8,12 @@ var el7 = document.getElementById ("elNo7");
 var el8 = document.getElementById ("elNo8");
 var el9 = document.getElementById ("elNo9");
 var counter = 0;
+var result = 0;	
 let lastClickedSquare = null;
 
 
-function elementt(allElements) {
+function elementt(allElements) 
+{
   const squares = document.querySelectorAll('.el_No');
   const undoButton = document.getElementById('undoButton');
 
@@ -24,7 +26,7 @@ function elementt(allElements) {
           square.style.backgroundColor = "blue";
           lastClickedSquare = square;
         } else {
-          square.style.backgroundColor = "red";
+          square.style.backgroundColor =  "red" ;
           lastClickedSquare = square;
         }
       }
@@ -37,6 +39,43 @@ function elementt(allElements) {
       lastClickedSquare = null;
     }
   });
+  
+  
+  
+	var hiddenEl = document.getElementById("hiddenEl"); 
+	
+	if(lastClickedSquare.style.backgroundColor === "red" || lastClickedSquare.style.backgroundColor === "blue")
+	{
+		counter++;
+		if(counter === 8)
+		{
+			hiddenEl.style.display = "block";
+			counter = 0;
+		}
+	}
+	
+	var showResult = document.getElementById("winLose");
+	if (el1.style.backgroundColor !==  el2.style.backgroundColor  !== el3.style.backgroundColor && 
+	 el4.style.backgroundColor !==  el5.style.backgroundColor !== el6.style.backgroundColor && 
+	 el7.style.backgroundColor !== el8.style.backgroundColor !==  el9.style.backgroundColor &&
+	 el1.style.backgroundColor !== el4.style.backgroundColor !== el7.style.backgroundColor &&  
+	 el2.style.backgroundColor !== el5.style.backgroundColor !== el8.style.backgroundColor && 
+	 el3.style.backgroundColor !== el6.style.backgroundColor !== el9.style.backgroundColor &&   
+	 el1.style.backgroundColor !== el5.style.backgroundColor !== el9.style.backgroundColor &&  
+	 el3.style.backgroundColor !== el5.style.backgroundColor !== el7.style.backgroundColor  )  
+	{
+		showResult.style.display = "block";
+		showResult.innerHTML = "Its Draw!";
+	}
+	
+	if (el1.style.backgroundColor ===  el2.style.backgroundColor && el2.style.backgroundColor  === el3.style.backgroundColor )
+	{
+		alert(" winner is" + el1.backgroundColor);
+	}
+	
+	
+	
+  
 }
 
 
