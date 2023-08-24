@@ -6,24 +6,55 @@
 }
 
 .bigElement {
+	display: block;
+	position: relative;
 	width: 450px;
-    height: 447px;
-    border: none;
+    height: 485px;
+    border: 1px solid black;
     margin-top: 50px;
     padding: 5PX;
     margin-left: 363px;
 }
+
+.result {
+	display: none;
+	position: absolute;
+	width: 100%;
+	height: 500px;
+	background-color: #000000;
+	z-index: 10;
+}
+
+.winLose {
+	display: none;
+	position: absolute;
+	width: 357px;
+    height: 173px;
+    margin-top: 135px;
+    margin-left: 452px;
+    text-align: CENTER;
+    padding-top: 77px;
+    color: red;
+    font-size: 24px;
+    background-color: #fff;
+	z-index: 10;
+}
+	
+
+
+
+
 .el_No {
 	display: inline-block;
 	width: 146px;
-        height: 127px;
+    height: 127px;
 	margin-top: -4px;
 	border: 1px solid black;
 }
 
 
-
 .Undo {
+	display: inline-block;
 	width: 100px;
 	height: 30px;
 	margin-left: 115px;
@@ -35,15 +66,22 @@
 	color: #0170FF;
 }
 
+
 .Restart {
+	position: absolute;
+	display: inline-block;
 	width: 100px;
 	height: 30px;
+	margin-left: 5px;
 	margin-top: 15px;
+	text-decoration: none;
 	border: 1px solid #0170FF;
 	border-radius: 25px;
-	background-color: transparent;
+	background-color: #fff;
 	font-size: 18px;
 	color: #0170FF;
+	z-index: 10;
 }
+
 
 
