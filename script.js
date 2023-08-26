@@ -7,75 +7,110 @@ var el6 = document.getElementById ("elNo6");
 var el7 = document.getElementById ("elNo7");
 var el8 = document.getElementById ("elNo8");
 var el9 = document.getElementById ("elNo9");
-var counter = 0;
-var result = 0;	
-let lastClickedSquare = null;
 
+let lastClickedSquare = null;
+var counter = 0;
 
 function elementt(allElements) 
 {
-  const squares = document.querySelectorAll('.el_No');
-  const undoButton = document.getElementById('undoButton');
 
-
-
-  squares.forEach(square => {
-    square.addEventListener('click', () => {
-      if (square.style.backgroundColor === "") {
-        if (lastClickedSquare && lastClickedSquare.style.backgroundColor === "red") {
-          square.style.backgroundColor = "blue";
-          lastClickedSquare = square;
-        } else {
-          square.style.backgroundColor =  "red" ;
-          lastClickedSquare = square;
-        }
-      }
-    });
-  });
-
-  undoButton.addEventListener('click', () => {
-    if (lastClickedSquare) {
-      lastClickedSquare.style.backgroundColor = '';
-      lastClickedSquare = null;
-    }
-  });
-  
-  
-  
-	var hiddenEl = document.getElementById("hiddenEl"); 
-	
-	if(lastClickedSquare.style.backgroundColor === "red" || lastClickedSquare.style.backgroundColor === "blue")
-	{
-		counter++;
-		if(counter === 8)
-		{
-			hiddenEl.style.display = "block";
-			counter = 0;
+	 var squares = document.getElementById(allElements);
+	 var undoButton = document.getElementById('undoButton');
+	 
+	 if (squares.style.backgroundColor === "")
+	 {
+		 counter++;
+		 if(counter === 1)
+		 {
+			 squares.style.backgroundColor = "RED";
+			 lastClickedSquare = squares;
+		 } 
+		 if(counter === 2)
+		 {
+			 squares.style.backgroundColor = "BLUE";
+			  lastClickedSquare = squares;
+			 counter = 0;
+		 }
+	 }
+		
+	  undoButton.addEventListener('click', () => {
+		if (lastClickedSquare) {
+		  lastClickedSquare.style.backgroundColor = '';
+		  lastClickedSquare = null;
 		}
-	}
-	
+	  });
+	  
+	var result = document.getElementById('hiddenEl');
 	var showResult = document.getElementById("winLose");
-	if (el1.style.backgroundColor !==  el2.style.backgroundColor  !== el3.style.backgroundColor && 
-	 el4.style.backgroundColor !==  el5.style.backgroundColor !== el6.style.backgroundColor && 
-	 el7.style.backgroundColor !== el8.style.backgroundColor !==  el9.style.backgroundColor &&
-	 el1.style.backgroundColor !== el4.style.backgroundColor !== el7.style.backgroundColor &&  
-	 el2.style.backgroundColor !== el5.style.backgroundColor !== el8.style.backgroundColor && 
-	 el3.style.backgroundColor !== el6.style.backgroundColor !== el9.style.backgroundColor &&   
-	 el1.style.backgroundColor !== el5.style.backgroundColor !== el9.style.backgroundColor &&  
-	 el3.style.backgroundColor !== el5.style.backgroundColor !== el7.style.backgroundColor  )  
+	
+	//Winner is...!
+	
+	if( el1.style.backgroundColor !== "" && el1.style.backgroundColor ===  el2.style.backgroundColor &&  el2.style.backgroundColor ===  el3.style.backgroundColor )
 	{
+		result.style.display = "block";
 		showResult.style.display = "block";
-		showResult.innerHTML = "Its Draw!";
+		showResult.innerHTML = "Winner is " + squares.style.backgroundColor ;
 	}
-	
-	if (el1.style.backgroundColor ===  el2.style.backgroundColor && el2.style.backgroundColor  === el3.style.backgroundColor )
+	if( el4.style.backgroundColor !== "" && el4.style.backgroundColor ===  el5.style.backgroundColor &&  el5.style.backgroundColor ===  el6.style.backgroundColor )
 	{
-		alert(" winner is" + el1.backgroundColor);
-	}
+		result.style.display = "block";
+		showResult.style.display = "block";
+		showResult.innerHTML = "Winner is " + squares.style.backgroundColor ;
+	} 
+	if( el7.style.backgroundColor !== "" && el7.style.backgroundColor ===  el8.style.backgroundColor &&  el8.style.backgroundColor ===  el9.style.backgroundColor )
+	{
+		result.style.display = "block";
+		showResult.style.display = "block";
+		showResult.innerHTML = "Winner is " + squares.style.backgroundColor ;
+	} 
+	if( el1.style.backgroundColor !== "" && el1.style.backgroundColor ===  el4.style.backgroundColor &&  el4.style.backgroundColor ===  el7.style.backgroundColor )
+	{
+		result.style.display = "block";
+		showResult.style.display = "block";
+		showResult.innerHTML = "Winner is " + squares.style.backgroundColor ;
+	} 
+	if( el2.style.backgroundColor !== "" && el2.style.backgroundColor ===  el5.style.backgroundColor &&  el5.style.backgroundColor ===  el8.style.backgroundColor )
+	{
+		result.style.display = "block";
+		showResult.style.display = "block";
+		showResult.innerHTML = "Winner is " + squares.style.backgroundColor ;
+	} 
+	if( el3.style.backgroundColor !== "" && el3.style.backgroundColor ===  el6.style.backgroundColor &&  el6.style.backgroundColor ===  el9.style.backgroundColor )
+	{
+		result.style.display = "block";
+		showResult.style.display = "block";
+		showResult.innerHTML = "Winner is " + squares.style.backgroundColor ;
+	} 
+	if( el1.style.backgroundColor !== "" && el1.style.backgroundColor ===  el5.style.backgroundColor &&  el5.style.backgroundColor ===  el9.style.backgroundColor )
+	{
+		result.style.display = "block";
+		showResult.style.display = "block";
+		showResult.innerHTML = "Winner is " + squares.style.backgroundColor ;
+	} 
+	if( el3.style.backgroundColor !== "" && el3.style.backgroundColor ===  el5.style.backgroundColor &&  el5.style.backgroundColor ===  el7.style.backgroundColor )
+	{
+		result.style.display = "block";
+		showResult.style.display = "block";
+		showResult.innerHTML = "Winner is " + squares.style.backgroundColor ;
+	} 
 	
+	//Its Draw!
 	
+	else if (el1.style.backgroundColor !== "" && el2.style.backgroundColor !== "" && el3.style.backgroundColor !== "" && el4.style.backgroundColor !== ""
+	&& el5.style.backgroundColor !== "" && el6.style.backgroundColor !== "" && el7.style.backgroundColor !== "" && el8.style.backgroundColor !== ""
+	&& el9.style.backgroundColor !== "" && el1.style.backgroundColor !== el2.style.backgroundColor !== el3.style.backgroundColor 
+	&& el4.style.backgroundColor !== el5.style.backgroundColor !== el6.style.backgroundColor && el7.style.backgroundColor !== el8.style.backgroundColor !== el9.style.backgroundColor 
+	&& el1.style.backgroundColor !== el4.style.backgroundColor !== el7.style.backgroundColor 
+	&& el2.style.backgroundColor !== el5.style.backgroundColor !== el8.style.backgroundColor 
+	&& el3.style.backgroundColor !== el6.style.backgroundColor !== el9.style.backgroundColor 
+	&& el1.style.backgroundColor !== el5.style.backgroundColor !== el9.style.backgroundColor 
+	&& el3.style.backgroundColor !== el5.style.backgroundColor !== el7.style.backgroundColor) 
 	
-  
+	{
+		result.style.display = "block";
+		showResult.style.display = "block";
+		showResult.innerHTML = "Its draw!" ;
+	} 
 }
 
 
