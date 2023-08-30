@@ -5,12 +5,76 @@
 	box-sizing: border-box;
 }
 
+
+.header{
+	display: block;
+	position: absolute;
+	width: 100%;
+	height: 600px;
+	padding-top: 100px;
+	background-color: #000000;
+	text-align: center;	
+	font-size: 50px;
+}
+
+.titleRed {
+
+	color: red;
+	margin-left: -157px;
+    font-family: fantasy;
+}
+.titleVS {
+	color: #fff;
+    font-size: 76px;
+    font-weight: lighter;
+	text-decoration: line-through;
+}
+.titleBlue {
+
+	color: #0083ff;
+	margin-left: 157px;
+    font-family: fantasy;
+}
+.PlayerTwo {
+	width: 206px;
+    height: 50px;
+    border-radius: 39px;
+	font-size: 20px;
+    background-color: transparent;
+    color: red;
+	border: 2px solid red;
+}
+.PlayerOne {
+	width: 206px;
+    height: 50px;
+    border-radius: 39px;
+    background-color: transparent;
+    font-size: 20px;
+    color: #0083ff;
+	border: 2px solid #0083ff;
+}
+
+.TicTakToe {
+	display: none;
+	
+}
 .bigElement {
 	display: block;
 	position: relative;
 	width: 450px;
     height: 485px;
-    border: 1px solid black;
+    border: none;
+    margin-top: 50px;
+    padding: 5PX;
+    margin-left: 363px;
+}
+
+.holderElements {
+	display: block;
+	position: relative;
+	width: 450px;
+    height: 485px;
+    border: none;
     margin-top: 50px;
     padding: 5PX;
     margin-left: 363px;
@@ -52,6 +116,16 @@
 	border: 1px solid black;
 }
 
+.el_No1 {
+	display: inline-block;
+	width: 146px;
+    height: 127px;
+	margin-top: -4px;
+	border: 1px solid black;
+}
+
+
+
 
 .Undo {
 	display: inline-block;
@@ -65,6 +139,19 @@
 	font-size: 18px;
 	color: #0170FF;
 }
+.btnUndo {
+	display: inline-block;
+	width: 100px;
+	height: 30px;
+	margin-left: 115px;
+	margin-top: 15px;
+	border: 1px solid #0170FF;
+	border-radius: 25px;
+	background-color: transparent;
+	font-size: 18px;
+	color: #0170FF;
+}
+
 
 
 .Restart {
@@ -82,7 +169,126 @@
 	color: #0170FF;
 	z-index: 10;
 }
+.btnRestart {
+	position: absolute;
+	display: inline-block;
+	width: 100px;
+	height: 30px;
+	margin-left: 5px;
+	margin-top: 15px;
+	text-decoration: none;
+	border: 1px solid #0170FF;
+	border-radius: 25px;
+	background-color: #fff;
+	font-size: 18px;
+	color: #0170FF;
+	z-index: 10;
+}
+
+.playerVsComputer
+{
+	display: none;
+}
 
 
+.squareOfOnePlayer1 {
+	display: inline-block;
+	width: 146px;
+    height: 127px;
+	margin-left: -4px;
+    margin-top: -4px;
+	border: 1px solid black;
+}
+
+
+.squareOfOnePlayer2 {
+	display: inline-block;
+	width: 146px;
+    height: 127px;
+	margin-left: -4px;
+    margin-top: -4px;
+	border: 1px solid black;
+}
+
+
+.squareOfOnePlayer3 {
+	display: inline-block;
+	width: 146px;
+    height: 127px;
+	margin-left: -4px;
+    margin-top: -4px;
+	border: 1px solid black;
+}
+
+
+.squareOfOnePlayer4 {
+	display: inline-block;
+	width: 146px;
+    height: 127px;
+	margin-left: -4px;
+    margin-top: -4px;
+	border: 1px solid black;
+}
+
+
+.squareOfOnePlayer5 {
+	display: inline-block;
+	width: 146px;
+    height: 127px;
+	margin-left: -4px;
+    margin-top: -4px;
+	border: 1px solid black;
+}
+
+
+.squareOfOnePlayer6 {
+	display: inline-block;
+	width: 146px;
+    height: 127px;
+	margin-left: -4px;
+    margin-top: -4px;
+	border: 1px solid black;
+}
+
+
+.squareOfOnePlayer7 {
+	display: inline-block;
+	width: 146px;
+    height: 127px;
+	margin-left: -4px;
+    margin-top: -4px;
+	border: 1px solid black;
+}
+
+
+.squareOfOnePlayer8 {
+	display: inline-block;
+	width: 146px;
+    height: 127px;
+	margin-left: -4px;
+    margin-top: -4px;
+	border: 1px solid black;
+}
+
+
+.squareOfOnePlayer9 {
+	display: inline-block;
+	width: 146px;
+    height: 127px;
+	margin-left: -4px;
+    margin-top: -4px;
+	border: 1px solid black;
+}
+
+.holderOfElements {
+	display: block;
+    position: relative;
+    width: 462px;
+    height: 485px;
+    border: 1px solid black;
+    margin-top: 50px;
+    padding: 5PX;
+    margin-left: 363px;
+}
 
 
