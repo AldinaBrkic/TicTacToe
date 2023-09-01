@@ -111,6 +111,19 @@ function elementt(allElements)
 		showResult.style.display = "block";
 		showResult.innerHTML = "Its draw!" ;
 	} 
+		
+	//restartGame
+	
+	var btnRestart = null;
+	var restartGame = document.getElementById('restartGame');
+	restartGame.addEventListener('click', () => {
+	if (restartGame) 
+	{
+		squares.style.backgroundColor = '';
+		btnRestart = null;
+	}
+	});
+	
 }
 //Two player's button
 
@@ -299,6 +312,19 @@ function playGame(){
 		showResult.style.display = "block";
 		showResult.innerHTML = "Its draw!" ;
 	} 
+
+	//restartGame
+	var restartButton = document.getElementById('restartButton');
+	restartButton.addEventListener("click", restartGame);
+	function restartGame() {
+	  for (var i = 0; i < squaress.length; i++) {
+		squaress[i].style.backgroundColor = "";
+	  }
+	  lastPlayerMove = null;
+	  lastComputerMove = null;
+	  currentPlayer = "player";
+	}
+
 	
 }
 
